@@ -1,0 +1,32 @@
+{
+    "sqltools.connections": [
+        {
+            "connectionMethod": "Hostname and Token",
+            "catalog": "lab",
+            "previewLimit": 50,
+            "driver": "Databricks",
+            "name": "databricks_small_serverless",
+            "host": "host",
+            "path": "warehouse"
+        }
+    ],
+    "python.analysis.stubPath": ".vscode",
+    "jupyter.interactiveWindow.cellMarker.codeRegex": "^# COMMAND ----------|^# Databricks notebook source|^(#\\s*%%|#\\s*\\<codecell\\>|#\\s*In\\[\\d*?\\]|#\\s*In\\[ \\])",
+    "jupyter.interactiveWindow.cellMarker.default": "# COMMAND ----------",
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.analysis.extraPaths": [
+        "src"
+    ],
+    "files.exclude": {
+        "**/*.egg-info": true,
+        "**/__pycache__": true,
+        ".pytest_cache": true
+    },
+    "yaml.schemas": {
+        "https://json.schemastore.org/databricks-asset-bundles.json": "file:///c%3A/Code/databricks-metadata-driven-dlt/src/python_dlt/resources/python_dlt.pipeline.yml"
+    },
+}

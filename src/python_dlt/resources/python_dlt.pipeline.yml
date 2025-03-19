@@ -1,0 +1,26 @@
+# The main pipeline for python_dlt
+resources:
+  pipelines:
+    python_dlt_pipeline:
+      name: python_dlt_pipeline
+      continuous: false
+      development: true
+      photon: false
+      # serverless: true
+      clusters:
+        - label: default
+          instance_pool_id: ${var.worker_pool}
+          driver_instance_pool_id: ${var.driver_pool}
+          autoscale:
+            min_workers: 1
+            max_workers: 3
+            mode: ENHANCED
+
+      catalog: lab
+      schema: default
+      libraries:
+        - file:
+            path: ../pipelines/bronze_deposit.py
+
+      configuration:
+        bundle.sourcePath: /Workspace${workspace.file_path}/
